@@ -1,0 +1,170 @@
+:root {
+    --primary-color: #3b82f6;
+    --dialogue-bg: rgba(0, 0, 0, 0.8);
+    --text-color: #fff;
+    --name-color: #ffd700;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.game-wrapper {
+    width: 100%;
+    max-width: 1280px;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+    position: relative;
+}
+
+#game-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background */
+#background-layer {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease-in-out;
+}
+
+/* Character */
+#character-layer {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 90%;
+    pointer-events: none;
+}
+
+#character-sprite {
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+#character-sprite.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Dialogue Box */
+#dialogue-box {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 180px;
+    background: var(--dialogue-bg);
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 15px;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    color: var(--text-color);
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+}
+
+#speaker-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--name-color);
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+#dialogue-text {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.next-indicator {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(5px); }
+}
+
+/* Choices */
+#choice-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+#choice-overlay.hidden {
+    display: none;
+}
+
+#choices-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 60%;
+}
+
+.choice-btn {
+    padding: 20px;
+    background: rgba(255,255,255,0.9);
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.choice-btn:hover {
+    transform: scale(1.02);
+    background: #fff;
+    color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+/* Home Button */
+.home-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    text-decoration: none;
+    background: rgba(0,0,0,0.5);
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background 0.2s;
+    z-index: 50;
+}
+
+.home-btn:hover {
+    background: rgba(0,0,0,0.8);
+}

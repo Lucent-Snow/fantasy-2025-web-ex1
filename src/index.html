@@ -1,9 +1,146 @@
 <!DOCTYPE html>
-aaaaaaaa
-<html>
-<ody>
-    请修改我！！！！！
-</ody>
-</html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fantasy 动漫社</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <body>
+    <!-- 顶部导航 -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-logo">ACGN CLUB</div>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="game.html">游戏中心</a>
+                <a href="#">加入我们</a>
+            </div>
+        </div>
+    </nav>
 
-冲突冲突？
+    <div class="main-container">
+        
+        <!-- 1. 核心首屏区域 (Hero) -->
+        <section class="hero-section">
+            
+            <!-- 左侧：看板娘与身份卡 -->
+            <div class="identity-card">
+                <!-- 这里是看板娘的图片占位 -->
+                <div class="mascot-placeholder">
+                    <div class="placeholder-content">
+                        <i class="fa-solid fa-image fa-3x"></i>
+                        <p>看板娘立绘区域 (320x420)</p>
+                    </div>
+                </div>
+                <!-- 签到交互区 -->
+                <div class="check-in-area">
+                    <button class="check-in-btn" id="checkInBtn">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        <span>今日签到</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 右侧：仪表盘与公告 -->
+            <div class="dashboard-area">
+                
+                <!-- 常规内容展示 -->
+                <div class="main-banner">
+                    <h1>欢迎来到社团主页</h1>
+                    <p>这里是社团的常规介绍区域。你可以在这里放一段简单的 Slogan，或者当前的头条大图。保持简洁，把复杂的留给下面。</p>
+                    <div class="banner-actions">
+                        <button class="btn-primary">了解更多</button>
+                    </div>
+                </div>
+
+                <!-- 带背景图的滚动公告栏 -->
+                <div class="news-ticker-container" id="newsTicker">
+                    
+                    <!-- 左侧日期块 -->
+                    <div class="news-date-block">
+                        <span class="date-day" id="displayDay">03</span>
+                        <span class="date-month" id="displayMonth">DEC</span>
+                    </div>
+
+                    <!-- 轮播内容区 -->
+                    <div class="news-content-viewport" id="newsViewport">
+                        <!-- JS会动态填充这里的内容 -->
+                    </div>
+
+                    <!-- 手动控制按钮 -->
+                    <div class="nav-controls">
+                        <button class="nav-btn prev-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button class="nav-btn next-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- 2. 部门介绍区域 (Grid布局) -->
+        <section class="departments-section">
+            <h2 class="section-title">社团架构 / DEPARTMENTS</h2>
+            <div class="departments-grid">
+                
+                <!-- 卡片 1 -->
+                <div class="dept-card">
+                    <div class="dept-icon"><i class="fa-solid fa-pen-nib"></i></div>
+                    <div class="dept-name">文案部</div>
+                    <div class="dept-intro">构建世界观，撰写剧本与轻小说。</div>
+                </div>
+
+                <!-- 卡片 2 -->
+                <div class="dept-card">
+                    <div class="dept-icon"><i class="fa-solid fa-palette"></i></div>
+                    <div class="dept-name">美术部</div>
+                    <div class="dept-intro">角色立绘、场景绘制与UI设计。</div>
+                </div>
+
+                <!-- 卡片 3 -->
+                <div class="dept-card">
+                    <div class="dept-icon"><i class="fa-solid fa-code"></i></div>
+                    <div class="dept-name">开发部</div>
+                    <div class="dept-intro">游戏引擎开发、网站维护与工具制作。</div>
+                </div>
+
+                <!-- 卡片 4 -->
+                <div class="dept-card">
+                    <div class="dept-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                    <div class="dept-name">宣发部</div>
+                    <div class="dept-intro">活动策划、视频剪辑与对外运营。</div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 3. 扩展区域 / API 查询 -->
+        <section class="expansion-section">
+            <h2 class="section-title">社团数据 / DATA CENTER</h2>
+            <div class="expansion-container">
+                <div class="api-query-box">
+                    <h3><i class="fa-solid fa-users"></i> 历年社团规模查询</h3>
+                    <div class="input-group">
+                        <input type="number" id="yearInput" placeholder="输入年份 (e.g. 2025)" min="2000" max="2099">
+                        <button id="queryBtn" class="btn-secondary">查询</button>
+                    </div>
+                    <div id="result" class="query-result"></div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 ACGN CLUB. All rights reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>

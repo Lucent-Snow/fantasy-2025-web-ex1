@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy 动漫社 - 招新日</title>
+    <link rel="stylesheet" href="game.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="game-wrapper">
+        <div id="game-container">
+            <!-- Background Layer -->
+            <div id="background-layer"></div>
+            
+            <!-- Character Layer -->
+            <div id="character-layer">
+                <img id="character-sprite" src="" alt="Character" class="hidden">
+            </div>
+
+            <!-- Dialogue Box -->
+            <div id="dialogue-box">
+                <div id="speaker-name"></div>
+                <div id="dialogue-text"></div>
+                <div class="next-indicator"><i class="fa-solid fa-caret-down"></i></div>
+            </div>
+
+            <!-- Choice Overlay -->
+            <div id="choice-overlay" class="hidden">
+                <div id="choices-container">
+                    <!-- Choices will be injected here -->
+                </div>
+            </div>
+
+            <!-- Home Button -->
+            <a href="index.html" class="home-btn"><i class="fa-solid fa-house"></i> 返回首页</a>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
